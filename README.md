@@ -43,8 +43,18 @@ en cada declaración de objetos, funciones y arreglos, por ejemplo: ``{ [ foo ] 
 * No usar espacios después de cada parátesis circular, por ejemplo: ``if (a>b) {`` y no ``if ( a>b ) {``
 * Acceder a las propiedas de una estructura de datos, utilizando la sintaxis de corchetes ``data["propiedad"]`` 
 en vez de ``data.propiedad``
-* Usar ``===`` en vez de ``==`` [?](http://www.impressivewebs.com/why-use-triple-equals-javascipt/)
+* Usar ``===`` en vez de ``==``.[?](http://www.impressivewebs.com/why-use-triple-equals-javascipt/)
 * Usar comillas simples ``'strings'`` para strings.
+
+
+### Librerias
+
+Utilizar preferentemente las siguientes librerias.
+* [jQuery](http://jquery.com/)
+* [Bootstrap](http://twitter.github.com/bootstrap/)
+* [CoffeScript] (http://coffeescript.org/)
+
+
 
 
 
