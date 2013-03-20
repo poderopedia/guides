@@ -10,13 +10,11 @@ Contenidos
 * [Python] (#python)
 
 ## Repositorios
--------------------
 
 * Documentar desde el inicio el proyecto, indicando las librerías requeridas y cada uno de los pasos de configuración
 * Documentar cualquier condición necesaria para el funcionamiento de la aplicación, incluídos CronJobs y variables de ambiente.
 
 ## HTML y CSS
--------------------
 
 * La codificación del archivo HTML debe ser utf-8
 * Los IDs de cada elemento debe indicarse utilizando minúsculas y guiones entre palabras ``minusculas-con-guion`` y sin utilizar acentos
@@ -27,7 +25,6 @@ Contenidos
 * Poner los modales en el footer.
 
 ##Javascript
--------------------
 
 ###General
 
@@ -38,6 +35,7 @@ Contenidos
 * Todas las variables deben ser limitadas al contexto usuando ``var``.
 * Declarar sólo una variable por línea.
 * Finalizar todas las sentencias con puntoycoma.
+* Se deben incluir los JS dentro del minificador utilizando ``response.files.append()``.
 * Usar espacios después de apertura y antes de cada cierre de llave ``{ }`` o corchete ``[ ]``  
 en cada declaración de objetos, funciones y arreglos, por ejemplo: ``{ [ foo ] }``.
 * No usar espacios después de cada parátesis circular, por ejemplo: ``if (a>b) {`` y no ``if ( a>b ) {``
@@ -64,6 +62,25 @@ Utilizar preferentemente las siguientes librerias.
 ###Lineamientos
 * [PEP8](http://www.python.org/dev/peps/pep-0008/).
 * Usar comillas simples ``'strings'`` para strings.
+* Utilizar internacionalización en web2py ``T('string')``.
+* Los settings no deben incluirse en los repositorios.
+* Incluir ``# coding: utf8`` al encabezado de los archivos .py
+
+###Librerías y Frameworks
+* Framework web2py o Flask
+* Fabric
+
+###Especificos sobre web2py
+* Ejecutar sólo una vez la aplicación con ``migrate=True`` en el modelo. Luego siempre hacerlo con ``migrate=False``
+* Utilizar modulos y no definir funciones en los modelos.
+* Compilar la aplicación utilizando el admin (puede automatizarse via fabric)
+* Cachear en Ram todo lo que se pueda. Si es posible utilizar un servidor memcached
+* Minificar todo el contenido CSS y JS, utilizando response.files.append()
+* Comprimir el contenido estático, utilizando los scripts de web2py.
+* No codear demasiadas funciones en un mismo controlador. Es preferible tener controladores con pocas funciones.
+* No utilizar el cron de web2py, a menos que sea estrictamente necesario. Es mejor crear un script en fabric.
+
+
 
 
 
