@@ -33,7 +33,7 @@ Contenidos
 
 * Usar indentación de Python (4-espacios) para hacer consistente los IDE y facilitar la lectura del código.
 * Los nombres de las variables deben ser en ``minusculas_con_underscore`` y sin acentos
-* Las variables estáticas deben ser en ``MAYUSCULAS_CON_UDERSCORES``, y sin acentos.
+* Las variables estáticas deben ser en ``MAYUSCULAS_CON_UNDERSCORES``, y sin acentos.
 * Todas las variables globales deben ser definidas al comienzo del documento.
 * Todas las variables deben ser limitadas al contexto usuando ``var``.
 * Declarar sólo una variable por línea.
@@ -53,6 +53,17 @@ Utilizar preferentemente las siguientes librerias.
 * [jQuery](http://jquery.com/)
 * [Bootstrap](http://twitter.github.com/bootstrap/)
 * [CoffeScript] (http://coffeescript.org/)
+* [Modernizr] (http://modernizr.com/) para compatibilidad HTML5 y CSS3
+
+### Sobre Jquery
+* Las referencias deben ser cacheadas si son usadas más de una vez. Usar prefijo ``$``, por ejemplo ``var $electrica = $("#electrica");``.
+* Restringir las búsquedas al DOM mediante variables previamente cacheadas.
+
+## Python
+
+###Lineamientos
+* [PEP8](http://www.python.org/dev/peps/pep-0008/).
+* Usar comillas simples ``'strings'`` para strings.
 
 
 
