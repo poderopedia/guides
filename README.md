@@ -83,6 +83,9 @@ Utilizar preferentemente las siguientes librerias.
 * Separar lógicas, no incluir demasiado código python dentro de las vistas (views).
 * Utilizar internacionalización en web2py ``T('string_a_traducir')``.
 
+###Especifícos sobre Flask
+* [Debe seguir las normas de NPR app-template](https://github.com/nprapps/app-template).
+
 
 
 
