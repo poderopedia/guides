@@ -80,11 +80,11 @@ Utilizar preferentemente las siguientes librerias.
 * No codear demasiadas funciones en un mismo controlador. Es preferible tener controladores con pocas funciones.
 * No utilizar el cron de web2py, a menos que sea estrictamente necesario. Es mejor crear un script en fabric o cron de sistema.
 * Base de Datos. Si no se modificarán o borraran registros, se debe usar el parametro ``cacheable=True`` junto a ``cache=(cache.ram, xx)``.
-* Separar lógicas, no incluir demasiado código python dentro de las vistas (views).
+* Separar lógicas, no incluir lógica de negocios dentro de las vistas (views).
 * Utilizar internacionalización en web2py ``T('string_a_traducir')``.
 
 ###Especifícos sobre Flask
-* [Debe seguir las normas de NPR app-template](https://github.com/nprapps/app-template).
+* Debe seguir las normas de [NPR app-template](https://github.com/nprapps/app-template).
 
 
 
