@@ -62,7 +62,7 @@ Utilizar preferentemente las siguientes librerias.
 ###Lineamientos
 * [PEP8](http://www.python.org/dev/peps/pep-0008/).
 * Usar comillas simples ``'strings'`` para strings.
-* Utilizar internacionalización en web2py ``T('string')``.
+* Utilizar las reglas de internacionalización en todos los proyectos (Flask, Web2py).
 * Los settings no deben incluirse en los repositorios.
 * Incluir ``# coding: utf8`` al encabezado de los archivos .py
 
@@ -78,7 +78,10 @@ Utilizar preferentemente las siguientes librerias.
 * Minificar todo el contenido CSS y JS, utilizando response.files.append()
 * Comprimir el contenido estático, utilizando los scripts de web2py.
 * No codear demasiadas funciones en un mismo controlador. Es preferible tener controladores con pocas funciones.
-* No utilizar el cron de web2py, a menos que sea estrictamente necesario. Es mejor crear un script en fabric.
+* No utilizar el cron de web2py, a menos que sea estrictamente necesario. Es mejor crear un script en fabric o cron de sistema.
+* Base de Datos. Si no se modificarán o borraran registros, se debe usar el parametro ``cacheable=True`` junto a ``cache=(cache.ram, xx)``.
+* Separar lógicas, no incluir demasiado código python dentro de las vistas (views).
+* Utilizar internacionalización en web2py ``T('string_a_traducir')``.
 
 
 
