@@ -86,6 +86,12 @@ Utilizar preferentemente las siguientes librerias.
 ###Especifícos sobre Flask
 * Debe seguir las normas de [NPR app-template](https://github.com/nprapps/app-template).
 
+###GitHub
+* El desarrollo de detalles mayores debe ser realizado en ``branch`` separados desde branch develop. Mientras dure su desarrollo debe existir un ``merge`` constante desde ``master``, hasta que el desarrollo está completo.
+* El branch master debe ser siempre código estable y si se reportan bugs debe hacerse un rollback de inmediato.
+* No guardar archivos binarios y ni bases de datos en el repositorio.
+* No guardar claves ni archivos de configuración en el repositorio.
+
 
 
 
