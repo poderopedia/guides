@@ -66,6 +66,11 @@ Utilizar preferentemente las siguientes librerias.
 * Los settings no deben incluirse en los repositorios.
 * Incluir ``# coding: utf8`` al encabezado de los archivos .py
 
+###Otros
+* Cuando se verifique que una variable sea null. Utilizar siempre ``if foo is None``, no utilizar ``if !foo`` o if ``foo==0``
+* Al almacenar fechas se debe utilizar UTC.
+* Cuando se quiera acceder a un elemento de un diccionario utilizar ``get``. Por ejemplo ``os.environ.get('DEPLOYMENT_TARGET', None)``
+
 ###Librerías y Frameworks
 * Framework web2py o Flask
 * Fabric
