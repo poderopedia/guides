@@ -28,7 +28,7 @@ La solución propuesta consiste en que cuando un interesado quiera obtener el sn
 Y así queda un key compuesto parseable, y los origenes de los datos explícitos.
 
 
-Referencias y guias de Pixel-Ping:
+Referencias y guias de Pixel-Ping:  
 https://github.com/documentcloud/pixel-ping  
 http://documentcloud.github.com/pixel-ping/  
 http://www.propublica.org/nerds/item/pixel-ping-a-nodejs-stats-tracker  
