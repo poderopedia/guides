@@ -87,7 +87,7 @@ Utilizar preferentemente las siguientes librerias.
 * Base de Datos. Si no se modificarán o borraran registros, se debe usar el parametro ``cacheable=True`` junto a ``cache=(cache.ram, xx)``.
 * Separar lógicas, no incluir lógica de negocios dentro de las vistas (views).
 * Utilizar internacionalización en web2py ``T('string_a_traducir')``.
-* Para utilizar las vistas en modo debug agregar el siguiente código en la vista: 
+* Para utilizar las vistas en modo debug agregar el siguiente código en la vista:  
 ``{{if request.is_local:}}``  
 ``{{=response.toolbar()}}``  
 ``{{pass}}``
