@@ -91,6 +91,8 @@ Utilizar preferentemente las siguientes librerias.
 ``{{if request.is_local:}}``  
 ``{{=response.toolbar()}}``  
 ``{{pass}}``
+* Para utilizar response.flash agregar el siguiente código en la vista principal:  
+``<div class="flash">{{=response.flash or ''}}</div>``
 
 ###Especifícos sobre Flask
 * Debe seguir las normas de [NPR app-template](https://github.com/nprapps/app-template).
