@@ -26,9 +26,7 @@ http://www.propublica.org/article/who-polices-prosecutors-who-abuse-their-author
 
 Funcionamiento:
 El funcionamiento actual se basa en 3 archivos:
-config.json, index.php, database.php
-
-y una base de datos mysql.
+config.json, index.php, database.php, y una base de datos mysql.
 Script en el archivo: script_pixel_ping_db.sql
 La tabla descrita por el archivo sql debe existir al momento de la ejecución.
 
