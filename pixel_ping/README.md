@@ -33,13 +33,14 @@ Debe estar en algun directorio del equipo, al cual no se tenga acceso a través 
 
 Se debe configurar correctamente el archivo de configuracion de pixel-ping config.json.
 Ejemplo:
+<code>
 {
   "host":     "localhost",
   "port":     "9187",
   "interval": 5,
   "endpoint": "http://localhost/pixel_local_test/index.php"
 }
-
+</code>
 - index.php
 Se debe modifcar tambien las variables del archivo index.php para que coincidan con la base de datos.
 El archivo se debe ubicar en algun lugar en el que el servidor pueda ejecutarlo (ejemplo /var/www/pixel/index.php)
