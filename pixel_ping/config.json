@@ -1,0 +1,6 @@
+{
+  "host":     "localhost",
+  "port":     "9187",
+  "interval": 5,
+  "endpoint": "http://localhost/pixel_local_test/index.php"
+}
