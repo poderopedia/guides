@@ -27,6 +27,7 @@ config.json, index.php, database.php
 
 y una base de datos mysql.
 Script en el archivo: script_pixel_ping_db.sql
+La tabla descrita por el archivo sql debe existir al momento de la ejecución.
 
 - config.json:
 Debe estar en algun directorio del equipo, al cual no se tenga acceso a través de la web (NO PONERLO EN /var/www/ ...)
