@@ -21,6 +21,9 @@ http://www.propublica.org/nerds/item/pixel-ping-a-nodejs-stats-tracker
 Utilizado en: http://www.propublica.org/about/pixelping
 http://www.propublica.org/article/who-polices-prosecutors-who-abuse-their-authority-usually-nobody/single#republish
 
+--------------------------------------------------------
+
+
 Funcionamiento:
 El funcionamiento actual se basa en 3 archivos:
 config.json, index.php, database.php
