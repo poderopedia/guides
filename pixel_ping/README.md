@@ -2,7 +2,7 @@ Pixel-Ping
 
 Aplicación que corre en el servidor, y sirve para llevar registro de los "hits" de un artículo o página web, a partir de un pequeño snippet de código. Para instalar: http://documentcloud.github.com/pixel-ping/
 
-En la página en la que se requiere llevar registro de hits, se debe insertar el tag <img src="/pixel.gif?key=[KEY]" alt="" /> en la pagina. En una fuente(http://www.propublica.org/nerds/item/pixel-ping-a-nodejs-stats-tracker) indican que se debe incluir un scrip javascript que inserta el tag automáicamente, evitando algunos problemas.
+En la página en la que se requiere llevar registro de hits, se debe insertar el tag <code><img src="/pixel.gif?key=[KEY]" alt="" /></code> en la pagina. En una fuente(http://www.propublica.org/nerds/item/pixel-ping-a-nodejs-stats-tracker) indican que se debe incluir un scrip javascript que inserta el tag automáicamente, evitando algunos problemas.
 
 *Por hacer: especificar qué archivos se deben incluir en el framework para que funcione Pixel-Ping.
 
