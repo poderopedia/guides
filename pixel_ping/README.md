@@ -20,3 +20,40 @@ http://documentcloud.github.com/pixel-ping/
 http://www.propublica.org/nerds/item/pixel-ping-a-nodejs-stats-tracker
 Utilizado en: http://www.propublica.org/about/pixelping
 http://www.propublica.org/article/who-polices-prosecutors-who-abuse-their-authority-usually-nobody/single#republish
+
+Funcionamiento:
+El funcionamiento actual se basa en 3 archivos:
+config.json
+index.php
+database.php
+
+y una base de datos mysql.
+Script en el archivo: script_pixel_ping_db.sql
+
+- config.json:
+Debe estar en algun directorio del equipo, al cual no se tenga acceso a través de la web (NO PONERLO EN /var/www/ ...)
+
+Se debe configurar correctamente el archivo de configuracion de pixel-ping config.json.
+Ejemplo:
+{
+  "host":     "localhost",
+  "port":     "9187",
+  "interval": 5,
+  "endpoint": "http://localhost/pixel_local_test/index.php"
+}
+
+- index.php
+Se debe modifcar tambien las variables del archivo index.php para que coincidan con la base de datos.
+El archivo se debe ubicar en algun lugar en el que el servidor pueda ejecutarlo (ejemplo /var/www/pixel/index.php)
+
+- database.php
+Debe ir en la misma carpeta que index.php. No se debe modificar nada.
+
+Proceso de ejecución.
+
+Se debe correr pixel-ping en el servidor, pasando al comando pixel-ping la ubicacion del archivo config.json
+Ejemplo: <code> /home/user/node-v0.10.3/node_modules/pixel-ping/bin/pixel-ping /home/user/pixel/config.json</code>
+
+Finalmente, cada vez que se haga un request al archivo gif servido por pixel-ping (ejemplo, en el browser: http://localhost:9187/pixel.gif?key=sitio.com/restodelkey ), pixel-ping acumulará la información y la enviará a index.php en el siguiente flush. index.php recibe el flush a traves de un POST como un json que describe los hits, y los guarda en la tabla de la base de datos.
+
+
