@@ -1,1 +1,39 @@
-work in progress
+Documentación API Poderopedia
+Descripción
+Poderopedia cuenta con una API para poder extraer distintos datos del sistema. Para esto, se usan requests de tipo GET que devuelven un Objeto JSON con la información pedida. Para poder acceder a esta información, es necesario tener la API Key de Poderopedia.
+
+Cómo obtener un API Key de Poderopedia
+Para obtener una API Key de Poderopedia, lo primero que se debe hacer es dirigirse a: https://poderopedia.3scale.net/admin/access_details Al entrar se pedirá iniciar sesión en la página, y en caso de no estar registrado, se pedirá registrarse. Una vez dentro del sistema, se encontrará en un panel de control, donde haciendo click en "Give me my API Keys now!", podrá obtener su API Key.
+
+Obtener todas las conexiones de una persona u organización:
+Para obtener información sobre todas las conexiones que posee una persona dentro del sistema, se debe hacer un request de tipo GET a http://api.poderopedia.org/visualizacion/call/json/persona2all. Junto con esto, deben enviarse como request parameters _id, que es el número de Id de la entidad buscada, y user_key, que corresponde a la API Key obtenida en el paso anterior. Al hacer esto, se recibirá un objeto JSON como el que puede verse en el siguiente ejemplo:
+
+"nodes": [{ "group": "persona", "imagen": "", "url": "", "shortBio": "", "relevance": , "root": "", "id": "25", "name": "John Doe" }, { "group": "organizacion", "imagen": "", "url": "", "shortBio": "", "relevance": , "root": "", "id": "32", "name": "Partido Político 1" }, ... }], "links": [{ "source": "P25", "target": "O01", "value": "1" }, "source": "O32", "target": "O01", "value": "1" }, ... }] }
+
+En el caso de buscar conexiones de una Organización o Empresa en lugar de una persona, entonces la URI a la cual se le deberá hacer request será http://api.poderopedia.org/visualizacion/call/json/orgs2all. Junto con esto, deben enviarse los mismos parámetros que en el ejemplo anterior.
+
+Estructura del objeto JSON
+Como puede verse en el ejemplo anterior, el objeto JSON entregado por estas llamadas está compuesto principalmente por 2 listas: "nodes" y "links".
+
+Nodes:
+
+Esta lista contiene a todas las entidades que tienen relación con la entidad buscada y sus datos básicos. Los campos que contiene son:
+
+group: Indica si es persona u organización.
+imagen: Una pequeña imagen de la entidad
+url: URL de página relacionada con esta entidad (página de empresa/organización o perfil de poderopedia).
+shortBio: Una breve reseña sobre la persona, empresa u organización.
+relevance: Índice de relevancia. Indica qué tan relevante es la entidad dentro del sistema.
+root: Indica si el usuario es root.
+id: Id de la entidad dentro del sistema.
+name: Nombre de la entidad.
+Links:
+
+Esta lista contiene a todas las relaciones en sí de la entidad buscada. Los campos que contiene son:
+
+source: Indica el padre de la relación. Es de la forma "P05", donde la "P" indica que es una persona y "05" indica su Id en el sistema. En caso de ser una organización, el texto comenzará con una "O" en lugar de una "P".
+target: Indica a quién va dirigida la relación. Sigue la misma notación que "source".
+value: Es un índice de importancia de la conexión.
+En el caso de que la entidad buscada sea una persona, tendrá un campo extra:
+
+grupo: Indica el tipo de relación entre la persona buscada y la entidad con la cual está relacionada. Por ejemplo, si "grupo" es "FAM", indica que hay una relación de familia, "De trabajo" puede indicar que es relación de trabajo, "Socio Mayoritario" indica que es el socio mayoritario de la organización con la que está relacionada, y así sucesivamente.
