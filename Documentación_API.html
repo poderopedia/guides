@@ -1,0 +1,45 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Documentaci&oacute;n API Poderopedia</h1>
+        <h2>Descripci&oacute;n</h2>
+        <p>Poderopedia cuenta con una API para poder extraer distintos datos del sistema. Para esto, se usan requests de tipo GET que devuelven un Objeto JSON con la informaci&oacute;n pedida. Para poder acceder a esta informaci&oacute;n, es necesario tener la API Key de Poderopedia.</p>
+
+        <h2>C&oacute;mo obtener un API Key de Poderopedia</h2>
+        <p>Para obtener una API Key de Poderopedia, lo primero que se debe hacer es dirigirse a: https://poderopedia.3scale.net/admin/access_details Al entrar se pedir&aacute; iniciar sesi&oacute;n en la p&aacute;gina, y en caso de no estar registrado, se pedir&aacute; registrarse. Una vez dentro del sistema, se encontrar&aacute; en un panel de control, donde haciendo click en "Give me my API Keys now!", podr&aacute; obtener su API Key.</p>
+
+        <h2>Obtener todas las conexiones de una persona u organizaci&oacute;n:</h2>
+        <p>Para obtener informaci&oacute;n sobre todas las conexiones que posee una persona dentro del sistema, se debe hacer un request de tipo GET a http://api.poderopedia.org/visualizacion/call/json/persona2all. Junto con esto, deben enviarse como request parameters <b>_id</b>, que es el n&uacute;mero de Id de la entidad buscada, y <b>user_key</b>, que corresponde a la API Key obtenida en el paso anterior. Al hacer esto, se recibir&aacute; un objeto de tipo JSON como el que puede verse en el siguiente ejemplo:</p>
+        <p>
+        <code>"nodes": [{ "group": "persona", "imagen": "", "url": "", "shortBio": "", "relevance": , "root": "", "id": "25", "name": "John Doe" }, { "group": "organizacion", "imagen": "", "url": "", "shortBio": "", "relevance": , "root": "", "id": "32", "name": "Partido Pol&iacute;tico 1" }, ... }], "links": [{ "source": "P25", "target": "O01", "value": "1" }, "source": "O32", "target": "O01", "value": "1" }, ... }] }</code></p>
+
+        <p>En el caso de buscar conexiones de una Organizaci&oacute;n o Empresa en lugar de una persona, entonces la URI a la cual se le deber&aacute; hacer request ser&aacute; http://api.poderopedia.org/visualizacion/call/json/orgs2all. Junto con esto, deben enviarse los mismos par&aacute;metros que en el ejemplo anterior.</p>
+
+        <h2>Estructura del objeto JSON</h2>
+        <p>Como puede verse en el ejemplo anterior, el objeto JSON entregado por estas llamadas est&aacute; compuesto principalmente por 2 listas: "nodes" y "links".</p>
+
+        <h3>Nodes:</h3>
+
+        <p>Esta lista contiene a todas las entidades que tienen relaci&oacute;n con la entidad buscada y sus datos b&aacute;sicos. Los campos que contiene son:</p>
+  <p>
+        <ul><b>group</b>: Indica si es persona u organizaci&oacute;n.<br /></ul>
+        <ul><b>imagen</b>: Una peque&ntilde;a imagen de la entidad. <br /></ul>
+        <ul><b>url</b>: URL de p&aacute;gina relacionada con esta entidad (p&aacute;gina de empresa/organizaci&oacute;n o perfil de poderopedia).<br /></ul>
+        <ul><b>shortBio</b>: Una breve rese&ntilde;a sobre la persona, empresa u organizaci&oacute;n.<br /></ul>
+        <ul><b>relevance</b>: &iacute;ndice de relevancia. Indica qu&eacute; tan relevante es la entidad dentro del sistema.<br /></ul>
+        <ul><b>root</b>: Indica si el usuario es root.<br /></ul>
+        <ul><b>id</b>: Id de la entidad dentro del sistema.<br /></ul>
+        <ul><b>name</b>: Nombre de la entidad.</p></ul>
+        <h3>Links:</h3>
+
+        <p>Esta lista contiene a todas las relaciones en s&iacute; de la entidad buscada. Los campos que contiene son:</p>
+	<p>
+        <ul><b>source</b>: Indica el padre de la relaci&oacute;n. Es de la forma "P05", donde la "P" indica que es una persona y "05" indica su Id en el sistema. En caso de ser una organizaci&oacute;n, el texto comenzar&aacute; con una "O" en lugar de una "P". <br /></ul>
+        <ul><b>target</b>: Indica a qui&eacute;n va dirigida la relaci&oacute;n. Sigue la misma notaci&oacute;n que "source".<br /></ul>
+        <ul><b>value</b>: Es un &iacute;ndice de importancia de la conexi&oacute;n.</p></ul>
+        <ul><p>En el caso de que la entidad buscada sea una persona, tendr&aacute; un campo extra:</p></ul>
+
+        <ul><b>grupo</b>: Indica el tipo de relaci&oacute;n entre la persona buscada y la entidad con la cual est&aacute; relacionada. Por ejemplo, si "grupo" es "FAM", indica que hay una relaci&oacute;n de familia, "De trabajo" puede indicar que es relaci&oacute;n de trabajo, "Socio Mayoritario" indica que es el socio mayoritario de la organizaci&oacute;n con la que est&aacute; relacionada, y as&iacute; sucesivamente.<p></ul>
+    </body>
+</html>
