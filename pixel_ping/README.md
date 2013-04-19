@@ -86,8 +86,9 @@ Se debe correr pixel-ping en el servidor, pasando al comando pixel-ping la ubica
 <code> /home/user/node-v0.10.3/node_modules/pixel-ping/bin/pixel-ping /home/user/pixel/config.json</code>   
 
 
-Finalmente, cada vez que se haga un request al archivo gif servido por pixel-ping (ejemplo, en el browser: 
-``http://localhost:9187/pixel.gif?key=sitio.com/restodelkey`` ), 
+Finalmente, cada vez que se haga un request al archivo gif servido por pixel-ping.  
+Ejemplo, en el browser: 
+``http://localhost:9187/pixel.gif?key=sitio.com/restodelkey``  
 pixel-ping acumulará la información y la enviará a index.php en el siguiente flush. 
 index.php recibe el flush a traves de un POST como un json que describe los hits, 
 y los guarda en la tabla de la base de datos.
