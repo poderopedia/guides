@@ -62,7 +62,7 @@ Debe estar en algun directorio del equipo, al cual no se tenga acceso a través 
 
 Se debe configurar correctamente el archivo de configuracion de pixel-ping config.json.
 Ejemplo:
-<code>
+<code>  
 {  
   "host":     "localhost",  
   "port":     "9187",  
