@@ -76,10 +76,9 @@ Se debe modifcar tambien las variables del archivo index.php para que coincidan 
 El archivo se debe ubicar en algun lugar en el que el servidor pueda ejecutarlo (ejemplo /var/www/pixel/index.php)
 
 ### database.php
-Debe ir en la misma carpeta que index.php. No se debe modificar nada.
+Debe ir en la misma carpeta que index.php. No se debe modificar nada.  
 
-Proceso de ejecución.
-
+####Proceso de ejecución.
 Se debe correr pixel-ping en el servidor, pasando al comando pixel-ping la ubicacion del archivo config.json   
 
 #### Ejemplo:    
