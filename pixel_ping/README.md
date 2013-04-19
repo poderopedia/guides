@@ -92,4 +92,18 @@ pixel-ping acumulará la información y la enviará a index.php en el siguiente 
 index.php recibe el flush a traves de un POST como un json que describe los hits, 
 y los guarda en la tabla de la base de datos.
 
+## Pixel-ping como servicio:
+
+Se utilizará "Upstart" para la "instalación" de la aplicacion como un servicio.
+En el repositorio, se incluye un archivo de muestra llamado "pixel-ping-svc.conf".
+Este archivo contiene el script que mantiene el servicio en ejecución.
+Se debe editar para modificar el comando de ejecución de pixel-ping con las rutas correctas.
+
+Una vez modificado, para agregar pixel-ping como servicio, se debe copiar el archivo
+"pixel-ping-svc.conf" al directorio <code>/etc/init/</code> del servidor.
+En este momento, el servicio no está corriendo, debido a que el evento desencadena su
+ejecución (descrito en el archivo de "pixel-ping-svc.conf") no ha sido generado.
+Para iniciarlo manualmente se debe ingresar el siguiente comando en el terminal:
+<code> sudo start pixel-ping-svc </code>
+De esta manera se ejecuta el script, y pixel-ping queda en ejecución como servicio.
 
