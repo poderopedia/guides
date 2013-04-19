@@ -1,4 +1,4 @@
-Pixel-Ping
+## Pixel-Ping
 
 Aplicación que corre en el servidor, y sirve para llevar registro de los "hits" de un artículo o página web, 
 a partir de un pequeño snippet de código. Para instalar: http://documentcloud.github.com/pixel-ping/
@@ -10,9 +10,10 @@ un script de javascript que inserta el tag automáicamente, evitando algunos pro
 
 *Por hacer: especificar qué archivos se deben incluir en el framework para que funcione Pixel-Ping.
 
-** Modo de operación **
+## Modo de operación  
+
 Cada cierto intervalo de tiempo (configurable), la aplicación envía un json a la url especificada. 
-Este tiene la siguiente forma: 
+Este tiene la siguiente forma:   
 ``{ ``  
 ``"/pages/about.html": 276,``  
 ``"/articles/policy.html": 324``   
@@ -37,7 +38,7 @@ Así se obtendría algo como:
 
 Y así queda un key compuesto parseable, y los origenes de los datos explícitos.
 
-Referencias y guias de Pixel-Ping:  
+### Referencias y guias de Pixel-Ping:  
 https://github.com/documentcloud/pixel-ping  
 http://documentcloud.github.com/pixel-ping/  
 http://www.propublica.org/nerds/item/pixel-ping-a-nodejs-stats-tracker  
@@ -47,7 +48,7 @@ http://www.propublica.org/article/who-polices-prosecutors-who-abuse-their-author
 --------------------------------------------------------
 
 
-** Funcionamiento: **
+## Funcionamiento:
 El funcionamiento actual se basa en 3 archivos:
 * config.json, 
 * index.php, 
@@ -56,7 +57,7 @@ El funcionamiento actual se basa en 3 archivos:
 
 La tabla descrita por el archivo sql debe existir al momento de la ejecución.
 
-*** config.json: ***
+### config.json:
 Debe estar en algun directorio del equipo, al cual no se tenga acceso a través de la web (NO PONERLO EN /var/www/ ...)
 
 Se debe configurar correctamente el archivo de configuracion de pixel-ping config.json.
@@ -70,11 +71,11 @@ Ejemplo:
 }
 </code>  
 
-*** index.php ***
+### index.php
 Se debe modifcar tambien las variables del archivo index.php para que coincidan con la base de datos.
 El archivo se debe ubicar en algun lugar en el que el servidor pueda ejecutarlo (ejemplo /var/www/pixel/index.php)
 
-*** database.php ***
+### database.php
 Debe ir en la misma carpeta que index.php. No se debe modificar nada.
 
 Proceso de ejecución.
