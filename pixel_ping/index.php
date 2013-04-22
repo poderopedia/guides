@@ -16,7 +16,7 @@ if (isset($_REQUEST['json'])){
 	$decodedjson = json_decode($json);
 	$rows = array();
 	foreach ($decodedjson as $key => $hits){
-		$row = array(	'`key`' => $key, //el caracter '`' en los campos, es necesario para el correcto funcionamiento del la clase database
+		$row = array(	'`page_key`' => $key, //el caracter '`' en los campos, es necesario para el correcto funcionamiento del la clase database
 				'`hits`' => $hits,
 				'`datetime_ts`' => $datetime_ts,
 				'`day_of_the_month`' => $day_of_the_month,
