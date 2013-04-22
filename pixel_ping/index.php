@@ -8,6 +8,7 @@ if (isset($_REQUEST['json'])){
   $datetime_ts = date('Y-m-d H:i:s');
 	$day_of_the_month = date('d');
 	$month_of_the_year = date('n');
+	$date_day = date('Y-m-d')
 	$year = date('Y');
 	$week_of_the_year = date('W');
 
@@ -22,7 +23,8 @@ if (isset($_REQUEST['json'])){
 				'`day_of_the_month`' => $day_of_the_month,
 				'`month_of_the_year`' => $month_of_the_year,
 				'`year`' => $year,
-				'`week_of_the_year`' => $week_of_the_year );
+				'`week_of_the_year`' => $week_of_the_year,
+				'`date_day`' => $date_day);
 		array_push($rows, $row);
 	}
 
