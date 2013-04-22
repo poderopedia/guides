@@ -1,6 +1,6 @@
 delimiter $$
 
-CREATE TABLE  `pixel_test`.`pixel_stats` (
+CREATE TABLE  `pixel_stats` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `page_key` varchar(255) DEFAULT NULL,
   `hits` int(11) DEFAULT NULL,
