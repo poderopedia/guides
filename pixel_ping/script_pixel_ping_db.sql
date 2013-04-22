@@ -2,7 +2,7 @@ delimiter $$
 
 CREATE TABLE `pixel_stats` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `key` varchar(255) DEFAULT NULL,
+  `page_key` varchar(255) DEFAULT NULL,
   `hits` int(11) DEFAULT NULL,
   `datetime_ts` datetime DEFAULT NULL,
   `day_of_the_month` int(11) DEFAULT NULL,
