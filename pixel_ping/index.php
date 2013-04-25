@@ -5,10 +5,11 @@ include("database.php");
 
 if (isset($_REQUEST['json'])){
 
-  $datetime_ts = date('Y-m-d H:i:s');
+  	 date_default_timezone_set('America/Los_Angeles');
+  	$datetime_ts = date('Y-m-d H:i:s');
 	$day_of_the_month = date('d');
 	$month_of_the_year = date('n');
-	$date_day = date('Y-m-d')
+	$date_day = date('Y-m-d');
 	$year = date('Y');
 	$week_of_the_year = date('W');
 
