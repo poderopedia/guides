@@ -13,7 +13,7 @@ Incluir la siguiente funcion javascript en el archivo "views/_index.html"
                 //El siguiente bloque "recarga" los widgets CKEditor. (en realidad, los elimina,  el plugin los recarga luego)
                 if (CKEDITOR && CKEDITOR.instances) {
                     for (var oldName in CKEDITOR.instances) {
-                        //en la pagina de donde se sacó el código, se realiza un cambio de nombres
+                        //en la página de donde se sacó el código, se realiza un cambio de nombres
                         //source: http://stackoverflow.com/questions/1794219/ckeditor-instance-already-exists
                         //como utilizamos un plugin, la utilizacion no es la misma, y parece ser innecesario
                         //var newName = "ajax"+oldName;
@@ -30,6 +30,9 @@ Incluir la siguiente funcion javascript en el archivo "views/_index.html"
         &lt;!-- END Bloque Ckeditor --&gt;
 &lt;/body&gt;
 </code></pre>
+<br>
+<hr>
+<br>
 II. 
 
 En la vista que extiende '_index.html'
@@ -58,7 +61,9 @@ response.include_files()
 }}
 </code></pre>
 (Ver ejemplo: "views/desktop/admin_desktop.html")
-
+<br>
+<hr>
+<br>
 III.
 Al final de las vistas llamadas vía ajax, agregar el siguiente llamado<br>
 a la funcion javascript (definida en "views/_index.html")
@@ -69,4 +74,4 @@ a la funcion javascript (definida en "views/_index.html")
 &lt;/script&gt;
 </code>
 </pre>
-(ver ejemplo: "views/display_persona.load")
+(ver ejemplo: "views/desktop/display_persona.load")
