@@ -35,7 +35,7 @@ Incluir la siguiente funcion javascript en el archivo "views/_index.html"
 <br>
 II. 
 
-En la vista que extiende '_index.html'
+En la vista que extiende '_index.html', que inicia con:
 <code>
 {{extend '_index.html'}}
 </code>
