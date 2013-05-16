@@ -60,7 +60,7 @@ response.include_meta()
 response.include_files()
 }}
 </code></pre>
-(Ver ejemplo: "views/desktop/admin_desktop.html")
+(Ver ejemplo: "views/desktop/admin_desktop.html")<br>
 <br>
 <hr>
 <br>
