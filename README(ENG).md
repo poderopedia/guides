@@ -42,7 +42,7 @@ That's a parseable compound "key" and the explicit data.
 https://github.com/documentcloud/pixel-ping  
 http://documentcloud.github.com/pixel-ping/  
 http://www.propublica.org/nerds/item/pixel-ping-a-nodejs-stats-tracker  
-Utilizado en: http://www.propublica.org/about/pixelping  
+Used in: http://www.propublica.org/about/pixelping  
 http://www.propublica.org/article/who-polices-prosecutors-who-abuse-their-authority-usually-nobody/single#republish
 
 --------------------------------------------------------
@@ -58,7 +58,7 @@ The operation works based on 3 files:
 The table described in the sql file must exist at the execution time.
 
 ### config.json:
-It must be located in a directory of the server, not accesible through the wer (DO NOT PLACE AT /var/www/ ...)
+It must be located in a directory of the server, not accesible through the web (DO NOT PLACE AT /var/www/ ...)
 
 The pixel-ping configuration file config.json must be correctly configurated.
 Example:
