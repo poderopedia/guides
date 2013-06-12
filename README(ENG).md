@@ -86,8 +86,7 @@ Pixel-ping must be executed on the server, through the pixel-ping command with t
 <code> /home/user/node-v0.10.3/node_modules/pixel-ping/bin/pixel-ping /home/user/pixel/config.json</code>   
 
 
-Finally, each time that a request is made to the gif file server by pixel-ping, 
-cada vez que se haga un request al archivo gif servido por pixel-ping.  
+Finally, each time that a request is made to the gif file, served by pixel-ping, 
 (Example, in the browser
 ``http://localhost:9187/pixel.gif?key=sitio.com/restodelkey``  )
 pixel-ping will store the data and will send it to index.php in the next flush.
@@ -99,7 +98,7 @@ in the database table.
 "Upstart" will be used for the app instalation as a service.
 A sample file called "pixel-ping-svc.conf" is included in the repository.
 This file contains the script that mantains the service running.
-It must be edited to modify the pixel-ping exe command with the correct routes.as correctas.
+It must be edited to modify the pixel-ping exe command with the correct routes.
 
 Once modified, to add pixel-ping as a service, the file "pixel-ping-svc.conf" must be copied to the
 server directory <code>/etc/init/</code>.
