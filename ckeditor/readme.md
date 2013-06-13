@@ -1,7 +1,50 @@
-Hacer que el plugin web2py ckeditor funcione con SQLFORM.grid
+Hacer que el plugin web2py ckeditor funcione con SQLFORM.grid <br>
+Ejemplos basados en proyecto plug_and_play.<br><br>
+I. <br>
+INCLUIR ckeditor.js
+<br><br>
+Hay 2 alternativas: incluir via python, o de la forma clásica javascript.
+Utilice la que no cause problemas (errores en la consola).
 
-I. 
-Incluir la siguiente funcion javascript en el archivo "views/_index.html"
+1. Via python.
+En la vista que extiende '_index.html', que inicia con:
+<code>
+{{extend '_index.html'}}
+</code>
+en donde se hacen los llamados Ajax para mostrar el formulario(SQLFORM.grid)
+correspondiente, se debe agregar el siguiente bloque, inmediatamente luego
+anterior:
+<pre>
+<code>
+{{
+response.files.insert(0,URL('static','plugin_ckeditor/ckeditor_basic.js'))
+response.include_meta()
+response.include_files()
+}}
+</code></pre>
+
+Quedando el inicio del archivo de la siguiente forma:
+<pre><code>
+{{extend '_index.html'}}
+{{
+response.files.insert(0,URL('static','plugin_ckeditor/ckeditor_basic.js'))
+response.include_meta()
+response.include_files()
+}}
+</code></pre>
+(Ver ejemplo: "views/desktop/admin_desktop.html")<br>
+<br>
+2. Forma clásica javascript
+En cualquier archivo de la vista donde se utilizará ckeditor, agregar lo siguiente:
+<pre><code> &lt;script type="text/javascript" src="{{=URL(request.application,'static','plugin_ckeditor/ckeditor_basic.js')}}"&gt;
+&lt;/script&gt; </code></pre>
+<br>
+<hr>
+<br>
+
+II. 
+Incluir la siguiente funcion javascript, por ejemplo, en el archivo "views/_index.html"
+si se requiere que esté disponible para todas las vistas.
 <pre>
 <code>
 &lt;body&gt;
@@ -33,37 +76,7 @@ Incluir la siguiente funcion javascript en el archivo "views/_index.html"
 <br>
 <hr>
 <br>
-II. 
 
-En la vista que extiende '_index.html', que inicia con:
-<code>
-{{extend '_index.html'}}
-</code>
-en donde se hacen los llamados Ajax para mostrar el formulario(SQLFORM.grid)
-correspondiente, se debe agregar el siguiente bloque, inmediatamente luego
-anterior:
-<pre>
-<code>
-{{
-response.files.insert(0,URL('static','plugin_ckeditor/ckeditor_basic.js'))
-response.include_meta()
-response.include_files()
-}}
-</code></pre>
-
-Quedando el inicio del archivo de la siguiente forma:
-<pre><code>
-{{extend '_index.html'}}
-{{
-response.files.insert(0,URL('static','plugin_ckeditor/ckeditor_basic.js'))
-response.include_meta()
-response.include_files()
-}}
-</code></pre>
-(Ver ejemplo: "views/desktop/admin_desktop.html")<br>
-<br>
-<hr>
-<br>
 III.
 Al final de las vistas llamadas vía ajax, agregar el siguiente llamado<br>
 a la funcion javascript (definida en "views/_index.html")
